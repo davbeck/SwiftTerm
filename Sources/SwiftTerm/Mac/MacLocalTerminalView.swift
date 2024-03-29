@@ -157,9 +157,9 @@ open class LocalProcessTerminalView: TerminalView, TerminalViewDelegate, LocalPr
      * - Parameter environment: an array of environment variables to pass to the child process, if this is null, this picks a good set of defaults from `Terminal.getEnvironmentVariables`.
      * - Parameter execName: If provided, this is used as the Unix argv[0] parameter, otherwise, the executable is used as the args [0], this is used when the intent is to set a different process name than the file that backs it.
      */
-    public func startProcess(executable: String = "/bin/bash", args: [String] = [], environment: [String]? = nil, execName: String? = nil)
+    public func startProcess(executable: String = "/bin/bash", args: [String] = [], environment: [String]? = nil, workingDirectory: String? = nil, execName: String? = nil)
     {
-        process.startProcess(executable: executable, args: args, environment: environment, execName: execName)
+		process.startProcess(executable: executable, args: args, environment: environment, workingDirectory: workingDirectory, execName: execName)
     }
     
     /**
